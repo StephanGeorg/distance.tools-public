@@ -45,11 +45,12 @@ paths:
                   minItems: 2
                   items:
                     type: object
+                    required:
+                      - name
                     properties:
                       name:
                         type: string
                         description: Any input text or lat,lng
-                        required: true
                       country:
                         type: string
                         description: ISO 3166-1 alpha-3 country code
@@ -91,9 +92,13 @@ paths:
                   steps:
                     type: array
                     description: Routing steps
+                    items:
+                      type: object
                   points:
                     type: array
                     description: Routing points
+                    items:
+                      type: object
         "400":
           description: Bad Request - Invalid request
         "404":
@@ -102,7 +107,7 @@ paths:
     post:
       summary: Detailed car routing and airline distance
       description: Calculate car routing distances with detailed country breakdown.
-      parameters:
+      parameters: []
       requestBody:
         required: true
         content:
@@ -136,7 +141,7 @@ paths:
     post:
       summary: Maritime route and airline distance
       description: Get maritime route distances. Points will be matched to the nearest sea route vertex.
-      parameters:
+      parameters: []
       requestBody:
         required: true
         content:
@@ -294,7 +299,7 @@ paths:
     post:
       summary: Get maritime sea routes
       description: Calculate maritime sea routes between ports or coordinates.
-      parameters:
+      parameters: []
       requestBody:
         content:
           application/json:
@@ -338,7 +343,6 @@ components:
       type: apiKey
       in: header
       name: X-Billing-Token
-      required: true
       description: Authentication token for billing. Get your token at https://developers.distance.tools.
   schemas:
     ApiResponse:
@@ -388,7 +392,7 @@ components:
             waypoints:
               type: array
               items:
-                $ref: '#/components/schemas/TripWaypoint'
+                $ref: '#/components/schemas/Waypoint'
             trips:
               type: array
               items:
@@ -554,7 +558,7 @@ components:
         entry:
           type: array
           items:
-            type: bool
+            type: boolean
         in:
           type: integer
         out:
