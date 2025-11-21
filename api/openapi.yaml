@@ -217,7 +217,7 @@ paths:
           description: Bad Request - Invalid request
         "404":
           description: Not Found - Valid request but location not found
-  /route/car:
+  /routing/car:
     post:
       summary: Get car routing information
       description: Get high-performance car route calculations
@@ -295,7 +295,7 @@ paths:
           description: Bad Request - Invalid request
         "404":
           description: Not Found - Valid request but location not found
-  /route/maritime:
+  /routing/maritime:
     post:
       summary: Get maritime sea routes
       description: Calculate maritime sea routes between ports or coordinates.
