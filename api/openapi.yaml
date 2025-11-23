@@ -1,12 +1,51 @@
 openapi: 3.0.0
 info:
   title: Distance API
-  description: API for calculating distances between multiple points
+  description: >
+    Distance API by Distance Tools provides fast and accurate airline, car, and
+    maritime distance calculations for logistics, mapping, and carbon
+    footprint use cases. Integrate via simple HTTP endpoints with clear JSON
+    responses tailored for developers.
   version: 2.0.0
+  termsOfService: https://docs.distance.tools/legal/terms-of-service#terms-of-service-for-distance-api
+  contact:
+    name: Distance Tools Support
+    url: https://docs.distance.tools
+    email: s.georg@hey.com
+  x-logo:
+    url: https://www.distance.to/public/apple-touch-icon.png
+    altText: Distance Tools logo
+    backgroundColor: '#ffffff'
+    href: https://distance.tools
+
+externalDocs:
+  description: Distance Tools API documentation
+  url: https://docs.distance.tools/tools/api
+
 servers:
   - url: https://api.distance.tools/api/v2
+
+tags:
+  - name: Distance
+    description: >
+      Distance endpoints used by the spreadsheet integration and 
+      older clients. Provides airline, car, and maritime distance
+      calculations based on named locations or "lat,lng" inputs.
+    externalDocs:
+      description: Learn about the legacy distance endpoints
+      url: https://docs.distance.tools/
+  - name: Routing
+    description: >
+      High-performance routing endpoints for car and maritime routes.
+      Powered by OSRM-style responses, suitable for turn-by-turn
+      navigation, ETA estimation, and logistics optimization.
+    externalDocs:
+      description: Learn about routing and maritime APIs
+      url: https://docs.distance.tools/features/routing
+
 security:
   - XBillingToken: []
+
 paths:
   /distance/route:
     post:
