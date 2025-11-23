@@ -49,6 +49,7 @@ security:
 paths:
   /distance/route:
     post:
+      tags: [Distance]
       summary: Car routing and airline distance
       description: Calculate airline and car routing distances between multiple points.
       parameters:
@@ -144,6 +145,7 @@ paths:
           description: Not Found - Valid request but waypoints not found
   /distance/route/detailed:
     post:
+      tags: [Distance]
       summary: Detailed car routing and airline distance
       description: Calculate car routing distances with detailed country breakdown.
       parameters: []
@@ -178,6 +180,7 @@ paths:
           description: Not Found - Valid request but not all waypoints were found
   /distance/route/maritime:
     post:
+      tags: [Distance]
       summary: Maritime route and airline distance
       description: Get maritime route distances. Points will be matched to the nearest sea route vertex.
       parameters: []
@@ -212,6 +215,7 @@ paths:
           description: Not Found - Valid request but not all waypoints were found
   /distance/point:
     post:
+      tags: [Distance]
       summary: Get point information
       description: Get geocoding and information about a geographical point.
       parameters:
@@ -257,6 +261,7 @@ paths:
         "404":
           description: Not Found - Valid request but location not found
   /routing/car:
+    tags: [Routing]
     post:
       summary: Get car routing information
       description: Get high-performance car route calculations
@@ -336,6 +341,7 @@ paths:
           description: Not Found - Valid request but location not found
   /routing/maritime:
     post:
+      tags: [Routing]
       summary: Get maritime sea routes
       description: Calculate maritime sea routes between ports or coordinates.
       parameters: []
