@@ -49,7 +49,8 @@ security:
 paths:
   /distance/route:
     post:
-      tags: [Distance]
+      tags: 
+        - Distance
       summary: Car routing and airline distance
       description: Calculate airline and car routing distances between multiple points.
       parameters:
@@ -145,7 +146,8 @@ paths:
           description: Not Found - Valid request but waypoints not found
   /distance/route/detailed:
     post:
-      tags: [Distance]
+      tags: 
+        - Distance
       summary: Detailed car routing and airline distance
       description: Calculate car routing distances with detailed country breakdown.
       parameters: []
@@ -341,7 +343,8 @@ paths:
           description: Not Found - Valid request but location not found
   /routing/maritime:
     post:
-      tags: [Routing]
+      tags: 
+        - Routing
       summary: Get maritime sea routes
       description: Calculate maritime sea routes between ports or coordinates.
       parameters: []
