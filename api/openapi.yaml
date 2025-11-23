@@ -182,7 +182,8 @@ paths:
           description: Not Found - Valid request but not all waypoints were found
   /distance/route/maritime:
     post:
-      tags: [Distance]
+      tags: 
+        - Distance
       summary: Maritime route and airline distance
       description: Get maritime route distances. Points will be matched to the nearest sea route vertex.
       parameters: []
@@ -217,7 +218,8 @@ paths:
           description: Not Found - Valid request but not all waypoints were found
   /distance/point:
     post:
-      tags: [Distance]
+      tags: 
+        - Distance
       summary: Get point information
       description: Get geocoding and information about a geographical point.
       parameters:
@@ -263,7 +265,8 @@ paths:
         "404":
           description: Not Found - Valid request but location not found
   /routing/car:
-    tags: [Routing]
+    tags: 
+      - Routing
     post:
       summary: Get car routing information
       description: Get high-performance car route calculations
